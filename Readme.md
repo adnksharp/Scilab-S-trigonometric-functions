@@ -1,26 +1,28 @@
-# cos() y sin() con series infinitas
+# Trigonometric functions with series
 
-Calcular el valor de la función cos(x) radianes usando iteraciones.
+Calcular el valor de funciones trigonometricas en radianes usando iteraciones de la forma
 
-## [cos](cosF.sce)
-Para calcular el valor de la función cos(x) usando iteraciones, se debe hacer la suma de ```1 +/- x^(i)/(2i!)```, donde:
+$\cos(x) = \sum _{i = 0} ^{z} {\pm \left ( {x ^{2i}} \over {2i!} \right ) }$ y
+$\sin(x) = \sum _{i = x} ^{z} {\pm \left ( {x ^{(2i)+1}} \over {(1+(2i))!} \right ) }$
 
-- i = 1, 2, 4, ..., n*2 iteraciones.
-- x = radianes.
+para 35 iteraciones, las cuales pueden variar cambiando el valor de `in_loop`.
 
-## [sin](sinF.sce)
-Para calcular el valor de la función sin(x) usando iteraciones, se debe hacer la suma de ```x +/- x^(i)/((2i+1)!)```, donde:
+Dadas las funciones $\cos(x)$ y $\sin(x)$ se pueden obtener mas razones trigonometricas de la forma 
+|$\tan(x)={{\sin(x)}\over{\cos(x)}}$ | $\cot(x)={{\cos(x)}\over{\sin(x)}}$ | $\sec(x)={1\over\cos(x)}$ | $\csc(x)={1\over\sin(x)}$
+|-|-|-|-|
 
-- i = 1, 2, 4, ..., n*2 iteraciones.
-- x = radianes.
+### Uso
+La siguiente tabla muestra el nombre de cada función dentro del código
+| | | |
+|-|-|-|
+|$\sin(x)$ = `seno(x)`|$\cos(x)$ = `coseno(x)`|$\tan(x)$ = `tangente(x)`|
+|$\csc(x)$ = `cosecante(x)`|$\sec(x)$ = `secante(x)`|$\cot(x)$ = `cotangente(x)`|
 
+### Ejemplo de uso
+```Octave
+exec ('trigonometric.sci', -1)
+--> cosecante(1.2121)
+ ans  =
+
+   1.0679707
 ```
-coseno de... 2 
- 
-Iteraciones: 12 
-
-
-        cos(2) con 12 iteraciones:      -0.416147
-```
-
-##### Para ver el valor del cos(x) en cada iteración, descomentar la línea **11**.
